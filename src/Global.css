@@ -10,7 +10,9 @@
   --breakpoint-md: 1440px;
   --breakpoint-lg: 770px;
   --breakpoint-lg: 450px;
-  --clr-primary: blue;
+  --clr-bg-primary: #027ffe;
+  --clr-text-primary: rgb(69, 69, 69);
+  --clr-text-secondary: white;
 }
 html {
   font-size: 16px;

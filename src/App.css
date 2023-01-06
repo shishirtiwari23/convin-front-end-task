@@ -1,15 +1,142 @@
 .App {
   padding: 1rem;
 }
-.App .userInfo {
+.loadingContainer {
   width: 100%;
+  /* background-color: red; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardLoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.App .card {
+  width: 100%;
+  border: 2px solid var(--clr-bg-primary);
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 450px;
+  min-height: 170px;
+}
+.App .userInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.App .noUser h2 {
+  font-weight: 400;
+  line-height: 200%;
+}
+.App .noUser h4 {
+  font-weight: 300;
+  line-height: 200%;
+}
+.App .card * {
+  color: var(--clr-text-primary);
+}
+.App .userInfo .email,
+.App .userInfo .id {
+  font-weight: 300;
+  line-height: 150%;
+  overflow-wrap: break-word;
+}
+.App .userInfo .name {
+  line-height: 200%;
+  font-weight: 400;
+}
+.App .userInfo .image {
+  border-radius: 5px;
 }
 .App button {
   cursor: pointer;
   margin-right: 1rem;
   padding: 0.8rem 1.2rem;
   border-radius: 5px;
-  border: 2px solid var(--clr-primary);
+  margin-top: 1rem;
+  border: 2px solid var(--clr-bg-primary);
   background-color: transparent;
-  color: var(--clr-primary);
+  color: var(--clr-bg-primary);
+  transition: all 0.3s ease-in-out;
+}
+.App button.active {
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-text-secondary);
+}
+.App button:hover {
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-text-secondary);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+}
+.App .reset {
+  margin-top: 0;
+  padding: 0.8rem 2rem;
+  background-color: rgb(255, 183, 0);
+  font-weight: 400;
+  color: var(--clr-text-primary);
+  border: none;
+}
+.App .reset:hover {
+  background-color: rgb(255, 183, 0);
+  color: var(--clr-text-primary);
+}
+
+.App .buttons {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  padding-bottom: 1rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 450px) {
+  .App .userInfo {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .App button {
+    margin-right: 0.6rem;
+  }
+}
+
+svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
+  }
 }
